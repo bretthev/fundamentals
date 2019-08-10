@@ -1,5 +1,44 @@
-.title {
+html {
+  font-family: "Raleway", sans-serif;
+  font-weight: normal;
+}
+
+h1,
+h3,
+h5,
+p {
   background: black;
   color: white;
-  text-align: center;
+  font-weight: normal;
+}
+
+.link-container {
+  background: black;
+  padding: 5px;
+  transition: 0.25s;
+}
+
+.link-container:hover {
+  transform: rotate(-5deg);
+}
+
+.link-container:hover .link {
+  transform: rotate(5deg);
+}
+
+.link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.2rem;
+  color: white;
+  transition: 0.25s;
+}
+
+.home-link-container {
+  max-width: 100px;
+  margin: auto;
+}
+
+.description {
+  margin: auto;
 }

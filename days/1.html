@@ -1,5 +1,10 @@
 <!DOCTYPE html>
 <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Raleway&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../styles.css" />
     <title>First Day</title>
     <style type="text/css" media="screen">
       .body {
@@ -18,7 +23,7 @@
         border: 1px solid black;
         border-radius: 50%;
         justify-self: center;
-        margin: 10% auto;
+        margin: 2% auto;
         position: relative;
       }
 
@@ -81,7 +86,11 @@
       It's JavaScript and CSS time amirite
     </h1>
 
-    <div class="clock">
+    <div class="link-container home-link-container">
+      <a href="../index.html" class="link">&larr; Go Back</a>
+    </div>
+
+    <main class="clock">
       <div class="number top">12</div>
       <div class="number right">3</div>
       <div class="number bottom">6</div>
@@ -90,6 +99,7 @@
       <div class="hand minutes"></div>
       <div class="hand hours"></div>
     </div>
+
     <script type="text/javascript">
       function renderHand(handType, degreesToRotate) {
         return document.querySelector(`.${handType}`).style.transform = `rotate(${degreesToRotate}deg)`;
@@ -100,8 +110,8 @@
         const hours = currentTime.getHours();
         const minutes = currentTime.getMinutes();
         const seconds = currentTime.getSeconds();
-        // translate from military hours, also
-        renderHand('hours', 30 * (12 % hours))
+        
+        renderHand('hours', 30 * (hours % 12))
         renderHand('minutes', 6 * minutes)
         renderHand('seconds', 6 * seconds)
       }
