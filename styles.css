@@ -36,9 +36,33 @@ p {
 
 .home-link-container {
   max-width: 100px;
-  margin: auto;
+  margin: 5px auto 0;
+}
+
+.github-link-container {
+  max-width: 150px;
+  margin: 5px auto 0;
+  display: flex;
+  justify-content: center;
 }
 
 .description {
   margin: auto;
+  width: 50%;
+  background: black;
+  padding: 5px 10px;
+}
+
+.description-title {
+  text-align: center;
+}
+
+.snippet {
+  background: white;
+  color: black;
+  padding: 0 2px;
+}
+
+p {
+  line-height: 1.2;
 }

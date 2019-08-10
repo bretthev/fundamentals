@@ -90,6 +90,10 @@
       <a href="../index.html" class="link">&larr; Go Back</a>
     </div>
 
+    <div class="link-container github-link-container">
+      <a href="https://github.com/bretthev/fundamentals/blob/master/days/1.html" class="github-link link">Code is here.</a>
+    </div>
+
     <main class="clock">
       <div class="number top">12</div>
       <div class="number right">3</div>
@@ -98,7 +102,22 @@
       <div class="hand seconds"></div>
       <div class="hand minutes"></div>
       <div class="hand hours"></div>
-    </div>
+    </main>
+
+    <article class="description">
+      <h3 class="description-title">What I learned / remembered</h3>
+      <p>
+        A few things! My first thought was to use flex to manually but the the numbers in the correct 
+        places, but that would've required at least another container div or two. So I got a refresher 
+        on how to absolutely position things, which is a more efficient way of laying the clock face out.<br/><br/>
+
+        I also learned about the <span class="snippet">transform-origin</span> property, which let me rotate the
+        hands around their bottom. I got a refresher on how to make a circle <span class="snippet">(border-radius: 50%.)</span><br/><br/>
+
+        For the logic, I got a refresher on the difference between <span class="snippet">setInterval</span> and <span class="snippet">setTimeout.</span>
+        Also got a refresher on some basic DOM manipulation. A successful first day!
+      </p>
+    </article>
 
     <script type="text/javascript">
       function renderHand(handType, degreesToRotate) {
