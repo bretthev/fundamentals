@@ -8,6 +8,7 @@
 
       .title {
         text-align: center;
+        margin-top: 5%;
       }
 
       .clock{
@@ -53,25 +54,31 @@
         width: 2px;
         position: absolute;
         left: calc(50% - 1px);
-        top: 30px;
+        transform-origin: bottom center;
       }
 
       .seconds {
+        height: 120px;
         background: red;
+        top: 30px;
       }
 
       .minutes {
+        top: 50px;
+        height: 100px;
         background: blue;
       }
 
       .hours {
+        top: 70px;
+        height: 80px;
         background: black;
       }
     </style>
   </head>
   <body>
     <h1 class="title">
-      It's a clock!
+      It's JavaScript and CSS time amirite
     </h1>
 
     <div class="clock">
@@ -84,7 +91,22 @@
       <div class="hand hours"></div>
     </div>
     <script type="text/javascript">
-      console.log('hey')
+      function renderHand(handType, degreesToRotate) {
+        return document.querySelector(`.${handType}`).style.transform = `rotate(${degreesToRotate}deg)`;
+      }
+
+      function renderTime() {
+        const currentTime = new Date();
+        const hours = currentTime.getHours();
+        const minutes = currentTime.getMinutes();
+        const seconds = currentTime.getSeconds();
+        // translate from military hours, also
+        renderHand('hours', 30 * (12 % hours))
+        renderHand('minutes', 6 * minutes)
+        renderHand('seconds', 6 * seconds)
+      }
+
+      window.setInterval(renderTime, 1000)
     </script>
   </body>
 </html>
