@@ -16,8 +16,13 @@
 
       .day-links {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
         list-style: none;
+      }
+
+      .link-container {
+        margin-top: 5px;
       }
     </style>
   </head>
@@ -28,7 +33,12 @@
     <ul class="day-links">
       <li class="link-container">
         <a href="./things/clock.html" class="link">
-          Day 1: an ugly clock!
+          An ugly clock!
+        </a>
+      </li>
+      <li class="link-container">
+        <a href="./things/web-component.html" class="link">
+          A web component!
         </a>
       </li>
     </ul>

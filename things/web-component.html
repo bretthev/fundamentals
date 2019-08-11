@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="../styles.css" />
+    <title>My First Web Component</title>
+
+    <style>
+        .my-component-text {
+            text-align: center;
+            padding: 1px 0;
+        }
+    </style>
+  </head>
+  <body>
+    <h1 class="title">
+      A Wild Web Component Appeared!
+    </h1>
+
+    <my-first-component></my-first-component>
+
+    <script type="text/javascript">
+        class MyFirstComponent extends HTMLElement {
+            connectedCallback() {
+                this.innerHTML = `<p class="my-component-text">This is my first web component! It doesn't do anything!</p>`
+            }
+        }
+
+        customElements.define('my-first-component', MyFirstComponent)
+    </script>
+  </body>
+</html>
