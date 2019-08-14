@@ -6,7 +6,9 @@ html {
 h1,
 h3,
 h5,
-p {
+p,
+label,
+::placeholder {
   background: black;
   color: white;
   font-weight: normal;

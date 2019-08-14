@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Some Forms</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      label {
+        background: unset;
+      }
+
+      .forms-page {
+        background: #587792;
+      }
+
+      .form-practice {
+        margin: auto;
+        height: 500px;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+      }
+
+      .forms-title {
+        text-align: center;
+        margin-top: 10%;
+      }
+
+      .ap-container {
+        position: relative;
+        display: flex;
+      }
+
+      .animated-placeholder {
+        border: 1px solid white;
+        border-radius: 5px;
+        background: transparent;
+        color: white;
+        font-size: 1.5rem;
+        padding: 1rem;
+        height: 25px;
+        font-size: 1.2rem;
+      }
+
+      .animated-placeholder:focus::placeholder {
+        opacity: 1;
+      }
+
+      .animated-placeholder::placeholder {
+        color: white;
+        background: unset;
+        opacity: 0;
+        transition: opacity 0.2s;
+        transition-delay: 0.01s;
+      }
+
+      .ap-label {
+        position: absolute;
+        font-size: 1.2rem;
+        left: 1rem;
+        top: 1rem;
+        pointer-events: none;
+        cursor: text;
+        transition: top 0.5s;
+      }
+
+      .animated-placeholder:focus ~ .ap-label {
+        top: -2rem;
+      }
+    </style>
+  </head>
+  <body class="forms-page">
+    <h1 class="forms-title">
+      Some Form Practice
+    </h1>
+
+    <form class="form-practice">
+      <div class="ap-container">
+        <input
+          class="animated-placeholder"
+          type="text"
+          placeholder="The actual placeholder."
+          name="animated-placeholder"
+        />
+        <label class="ap-label" for="animated-placeholder"
+          >This label jumps.</label
+        >
+      </div>
+    </form>
+  </body>
+</html>
