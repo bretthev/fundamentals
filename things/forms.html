@@ -12,6 +12,16 @@
         background: #587792;
       }
 
+      .forms-page input {
+        /* background: transparent; */
+        height: 25px;
+        font-size: 1.2rem;
+      }
+
+      .forms-page input::placeholder {
+        background: transparent;
+      }
+
       .form-practice {
         margin: auto;
         height: 500px;
@@ -38,8 +48,6 @@
         color: white;
         font-size: 1.5rem;
         padding: 1rem;
-        height: 25px;
-        font-size: 1.2rem;
       }
 
       .animated-placeholder:focus::placeholder {
@@ -67,6 +75,30 @@
       .animated-placeholder:focus ~ .ap-label {
         top: -2rem;
       }
+
+      .popup {
+        margin-top: 20px;
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        border-bottom: 1px solid white;
+        background: linear-gradient(to top, white 50%, #587792 50%);
+        background-size: 100% 200%;
+        background-position: right top;
+        transition: all 0.1s ease;
+      }
+
+      .popup::placeholder {
+        transition: color 0.2s;
+      }
+
+      .popup:focus {
+        background-position: right bottom;
+      }
+
+      .popup:focus::placeholder {
+        color: #587792;
+      }
     </style>
   </head>
   <body class="forms-page">
@@ -85,6 +117,14 @@
         <label class="ap-label" for="animated-placeholder"
           >This label jumps.</label
         >
+      </div>
+      <div class="popup-container">
+        <input
+          class="popup"
+          type="text"
+          placeholder="Type stuff here."
+          name="popup"
+        />
       </div>
     </form>
   </body>
