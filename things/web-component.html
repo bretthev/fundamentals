@@ -2,13 +2,6 @@
 <head>
     <link rel="stylesheet" href="../styles.css" />
     <title>My First Web Component</title>
-
-    <style>
-        .my-component-text {
-            text-align: center;
-            padding: 1px 0;
-        }
-    </style>
   </head>
   <body>
     <h1 class="title">
@@ -17,11 +10,40 @@
 
     <my-first-component></my-first-component>
 
+    <my-first-component>
+      <p slot="description">This overrides the description in the template, and has different style scope. We're getting there!</p>
+    </my-first-component>
+
+    <article class="description">
+      <h3 class="description-title">What I learned</h3>
+      <p>
+        What a web component is. Even though the one I made doesn't actually do anything, I learned a little bit about the <span class="snippet">shadow dowm</span>
+        and how to create <span class="snippet">custom elements.</span><br/><br/>
+
+        TODO: Come back to this and try and make some of the parts of this site that I actually use web components and 
+        take a deeper dive into some of the component lifecycle methods that seem to be vaguely React-like. 
+      </p>
+    </article>
+
+    <template id="my-component-template">
+        <style>
+            .my-component-text {
+                text-align: center;
+                padding: 2px 0;
+                background: black;
+                color: white;
+            }
+        </style>
+      <p class="my-component-text"><slot name="description">This is my first web component! It doesn't do anything.</slot></p>
+    </template>
+
     <script type="text/javascript">
         class MyFirstComponent extends HTMLElement {
-            connectedCallback() {
-                this.innerHTML = `<p class="my-component-text">This is my first web component! It doesn't do anything!</p>`
-            }
+          constructor() {
+            super();
+            let template = document.getElementById('my-component-template')
+            let shadowRoot = this.attachShadow({mode: 'open'}).appendChild(template.content.cloneNode(true))
+          }
         }
 
         customElements.define('my-first-component', MyFirstComponent)
